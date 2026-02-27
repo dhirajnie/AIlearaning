@@ -10,7 +10,7 @@ import os
 # Initialize client
 client = openai.OpenAI(
     api_key=os.getenv("OPENAI_API_KEY"),
-    base_url=os.getenv("OPENAI_API_BASE")
+    base_url=os.getenv("https://api.openai.com/v1")
 )
 
 # ==========================================
@@ -29,15 +29,15 @@ client = openai.OpenAI(
 # TODO: Read each line below carefully to understand what it does
 # Then uncomment ALL lines (remove the # symbols) and fill in the blanks:
 
-# response = client.chat.completions.create(
-#     model="___",  # TODO: Use "openai/gpt-4.1-mini" - which AI model to use
-#     messages=[
-#         {
-#             "role": "___",     # TODO: Use "user" - you're the user speaking
-#             "content": "___"   # TODO: Use "Hello AI, please introduce yourself" - your message
-#         }
-#     ]
-# )
+response = client.chat.completions.create(
+    model="gpt-5-nano",  # TODO: Use "openai/gpt-4.1-mini" - which AI model to use
+    messages=[
+        {
+            "role": "user",     # TODO: Use "user" - you're the user speaking
+            "content": "Help me understand the basic bodmas rule in short"   # TODO: Use "Hello AI, please introduce yourself" - your message
+        }
+    ]
+)
 
 # ==========================================
 # REAL RESPONSE OBJECT STRUCTURE

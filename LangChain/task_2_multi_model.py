@@ -1,0 +1,54 @@
+#!/usr/bin/env python3
+"""
+Task 2: Multi-Model Support - One Interface, Many Providers!
+Test OpenAI, Google, and X.AI models using the same LangChain interface.
+
+Learning Goal: Experience provider flexibility without code changes.
+"""
+
+import os
+from langchain_openai import ChatOpenAI
+
+def main():
+    print("🎯 Task 2: Multi-Model Support with LangChain")
+    print("=" * 50)
+
+    print("\n🌐 Initialize Multiple AI Providers")
+    print("=" * 50)
+
+   
+
+    # TODO 3: Initialize X.AI Grok model
+    print("Setting up X.AI Grok...")
+    xai_llm = ChatOpenAI(
+        model="___",                    # Replace ___ with: "x-ai/grok-code-fast-1"
+        api_key=os.getenv("___"),      # Replace ___ with: "OPENAI_API_KEY"
+        base_url=os.getenv("___")      # Replace ___ with: "OPENAI_API_BASE"
+    )
+
+    # Compare all models with the same prompt
+    print("\n✅ All models initialized! Now let's compare them...")
+    print("\nModel Comparison - Same Prompt, Different Models")
+    print("=" * 50)
+
+    test_prompt = "Explain cloud computing in one sentence"
+    print(f"📝 Prompt: '{test_prompt}'\n")
+
+    # Test all models with the same prompt
+    if openai_llm:
+        response = openai_llm.invoke(test_prompt)
+        print(f"OpenAI: {response.content[:100]}...")
+
+
+    print("\n💡 Same code, different providers - perfect for A/B testing!")
+
+    # Create marker for completion
+    os.makedirs("/root/markers", exist_ok=True)
+    with open("/root/markers/task2_complete.txt", "w") as f:
+        f.write("COMPLETED")
+
+    print("\n✅ Task 2 completed! You can now switch models at will!")
+    print("🎉 You tested 3 different AI providers with identical code!")
+
+if __name__ == "__main__":
+    main()
