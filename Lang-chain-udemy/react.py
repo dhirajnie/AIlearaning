@@ -13,8 +13,6 @@ from langchain.tools import tool
 from langchain_core.messages import HumanMessage, ToolMessage
 from langchain_ollama import ChatOllama
 
-
-
 MAX_ITERATIONS = 3
 MODEL = "qwen3:1.7b"
 
